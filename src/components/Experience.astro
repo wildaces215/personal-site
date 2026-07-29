@@ -1,0 +1,56 @@
+---
+const experiences = [
+  {
+    role: "QA Analyst",
+    period: "2020 — 2024",
+    description: "Led test automation initiatives and quality assurance processes across multiple products. Developed and maintained automated test suites, conducted API and regression testing, and collaborated with development teams to integrate quality checks into CI/CD pipelines.",
+    highlights: [
+      "Built and maintained automated test frameworks reducing manual testing by 60%",
+      "Collaborated cross-functionally to improve release velocity and product stability",
+      "Championed quality culture and bug prevention over bug detection",
+    ]
+  }
+]
+---
+
+<section id="experience" class="mx-auto max-w-3xl px-6 py-24">
+  <div class="mb-12">
+    <span class="font-mono text-sm text-accent">// experience</span>
+    <h2 class="mt-2 text-3xl font-bold text-zinc-100">Where I've been</h2>
+  </div>
+
+  <div class="relative border-l border-zinc-800 pl-8">
+    {experiences.map((exp) => (
+      <div class="relative mb-12 last:mb-0">
+        <!-- Dot -->
+        <div class="absolute -left-[33px] top-1.5 h-3 w-3 rounded-full border-2 border-accent bg-zinc-950"></div>
+
+        <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+          <h3 class="text-lg font-semibold text-zinc-100">{exp.role}</h3>
+          <span class="font-mono text-sm text-zinc-500">{exp.period}</span>
+        </div>
+
+        <p class="mt-3 text-zinc-400 leading-relaxed">{exp.description}</p>
+
+        <ul class="mt-4 space-y-2">
+          {exp.highlights.map((h) => (
+            <li class="flex items-start gap-2 text-sm text-zinc-500">
+              <span class="mt-1 text-accent">▹</span>
+              <span>{h}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+
+    <!-- Future entry -->
+    <div class="relative opacity-40">
+      <div class="absolute -left-[33px] top-1.5 h-3 w-3 rounded-full border-2 border-zinc-700 bg-zinc-950"></div>
+      <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+        <h3 class="text-lg font-semibold text-zinc-300">Next chapter...</h3>
+        <span class="font-mono text-sm text-zinc-600">2025 —</span>
+      </div>
+      <p class="mt-3 text-sm text-zinc-600 italic">Looking for roles in AI/ML testing, MLOps, or QA engineering. Let's talk.</p>
+    </div>
+  </div>
+</section>

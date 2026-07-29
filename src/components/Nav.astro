@@ -1,0 +1,27 @@
+---
+const links = [
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Experience", href: "#experience" },
+  { label: "Education", href: "#education" },
+  { label: "Contact", href: "#contact" },
+]
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/50 bg-zinc-950/80 backdrop-blur-xl">
+  <nav class="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
+    <a href="#" class="font-mono text-sm font-semibold text-zinc-100 hover:text-accent-bright transition-colors">
+      ./home
+    </a>
+    <div class="flex gap-1 sm:gap-4">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class="px-2 py-1 text-sm text-zinc-400 hover:text-zinc-100 transition-colors"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </nav>
+</header>
