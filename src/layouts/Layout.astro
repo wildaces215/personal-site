@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css'
+import Analytics from '@vercel/analytics/astro'
 
 interface Props {
   title: string
@@ -32,5 +33,6 @@ const { title, description = 'QA Analyst & AI Engineer — bridging quality assu
   </head>
   <body class="bg-zinc-950 text-zinc-300 antialiased font-inter">
     <slot />
+    <Analytics />
   </body>
 </html>
