@@ -1,4 +1,7 @@
 ---
+import Reveal from './react/Reveal.tsx'
+import TiltCard from './react/TiltCard.tsx'
+
 const skillGroups = [
   {
     title: "Quality Assurance",
@@ -19,26 +22,30 @@ const skillGroups = [
 ---
 
 <section id="skills" class="border-y border-zinc-800/50 bg-zinc-900/30">
-  <div class="mx-auto max-w-3xl px-6 py-24">
-    <div class="mb-12">
-      <span class="font-mono text-sm text-accent">// skills</span>
-      <h2 class="mt-2 text-3xl font-bold text-zinc-100">What I bring to the table</h2>
-    </div>
+  <div class="mx-auto max-w-3xl px-6 py-20 sm:py-24">
+    <Reveal client:load>
+      <div class="mb-12">
+        <span class="font-mono text-sm text-accent">// skills</span>
+        <h2 class="mt-2 text-2xl font-bold text-zinc-100 sm:text-3xl">What I bring to the table</h2>
+      </div>
+    </Reveal>
 
     <div class="grid gap-6 sm:grid-cols-3">
-      {skillGroups.map((group) => (
-        <div class="rounded-xl border border-zinc-800 bg-zinc-950/50 p-6 transition-all hover:border-zinc-700 hover:bg-zinc-900/50">
-          <div class="mb-4 text-2xl">{group.icon}</div>
-          <h3 class="mb-4 font-semibold text-zinc-100">{group.title}</h3>
-          <ul class="space-y-2">
-            {group.skills.map((skill) => (
-              <li class="flex items-center gap-2 text-sm text-zinc-400">
-                <span class="text-accent">▹</span>
-                {skill}
-              </li>
-            ))}
-          </ul>
-        </div>
+      {skillGroups.map((group, i) => (
+        <Reveal client:load delay={i * 0.15}>
+          <TiltCard client:load class="h-full">
+            <div class="mb-4 text-2xl">{group.icon}</div>
+            <h3 class="mb-4 font-semibold text-zinc-100">{group.title}</h3>
+            <ul class="space-y-2">
+              {group.skills.map((skill) => (
+                <li class="flex items-center gap-2 text-sm text-zinc-400">
+                  <span class="text-accent">▹</span>
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </TiltCard>
+        </Reveal>
       ))}
     </div>
   </div>
